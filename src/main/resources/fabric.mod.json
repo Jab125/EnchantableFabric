@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "enchantable",
+  "version": "${version}",
+  "name": "Enchantable",
+  "description": "NANI?",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/enchantable/icon.png",
+  "environment": "*",
+  "accessWidener": "enchantable.accesswidener",
+  "entrypoints": {
+    "client": [
+      "com.jab125.enchantable.enchantable.Enchantable"
+    ],
+    "main": [
+      "com.jab125.enchantable.enchantable.Enchantable"
+    ]
+  },
+  "mixins": [
+    "enchantable.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.5",
+    "fabric": "*",
+    "minecraft": ">=1.19-alpha.22.19.a"
+  }
+}
