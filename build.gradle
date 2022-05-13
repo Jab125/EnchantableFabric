@@ -7,10 +7,6 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
-    maven {
-        name = "Jitpack"
-        url 'https://jitpack.io/'
-    }
     // Add repositories to retrieve artifacts from in here.
     // You should only use this when depending on other mods because
     // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
@@ -26,9 +22,6 @@ dependencies {
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-
-    modImplementation "com.github.Chocohead:Fabric-ASM:${project.fabric_asm_version}"
-    include "com.github.Chocohead:Fabric-ASM:${project.fabric_asm_version}"
 }
 
 processResources {
