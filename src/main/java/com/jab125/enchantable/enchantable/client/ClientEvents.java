@@ -115,6 +115,8 @@ public class ClientEvents {
         if (blockState.isIn(ConventionalBlockTags.ORES)) {
             return;
         }
+        if (!(heldItem.getItem() instanceof MiningToolItem mt)) return;
+        if (!(blockState.isIn(mt.effectiveBlocks))) return;
 
         int level = EnchantmentHelper.get(heldItem).get(ModEnchantments.EXCAVATOR);
         int size = ExcavatorEnchantment.BASE_SIZE + Math.max(0, level - 1) * 2;

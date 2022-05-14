@@ -45,6 +45,9 @@ public class ExcavatorEnchantment extends ModEnchantment {
 
     public static float onPlayerMineSpeed(PlayerEntity player, BlockState state, float speed)
     {
+        if (player.getMainHandStack().getItem() instanceof MiningToolItem mt) {
+            if (!state.isIn(mt.effectiveBlocks)) return speed;
+        }
         float effectiveSpeed = getEffectiveDigSpeed(player, state);
         if(effectiveSpeed > 0)
         {
