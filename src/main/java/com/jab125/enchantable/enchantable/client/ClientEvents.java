@@ -36,6 +36,8 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.function.IntFunction;
 
+import static com.jab125.enchantable.enchantable.enchantment.ExcavatorEnchantment.isValid;
+
 public class ClientEvents {
     private static boolean needsResetting = true;
     private static BlockPos lastHittingPos = null;
@@ -92,7 +94,7 @@ public class ClientEvents {
             }
             BlockState blockState = world.getBlockState(pos);
 
-            if (!true) { // there was a forge method that i can't find the equivalent to
+            if (!(result instanceof BlockHitResult res && isValid(res, player.world))) { // there was a forge method that i can't find the equivalent to
                 clearBreakProgress();
                 return;
             }

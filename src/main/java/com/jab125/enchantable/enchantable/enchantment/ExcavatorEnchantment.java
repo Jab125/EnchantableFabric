@@ -1,7 +1,6 @@
 package com.jab125.enchantable.enchantable.enchantment;
 
 import it.unimi.dsi.fastutil.Pair;
-import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBlockTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -19,7 +18,6 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.MiningToolItem;
-import net.minecraft.item.ToolItem;
 import net.minecraft.tag.FluidTags;
 import net.minecraft.tag.TagKey;
 import net.minecraft.util.Hand;
@@ -54,6 +52,13 @@ public class ExcavatorEnchantment extends ModEnchantment {
             return effectiveSpeed;
         }
         return speed;
+    }
+
+    public static boolean isValid(BlockHitResult res, World world) {
+        var pos = res.getBlockPos();
+        if (!world.getWorldBorder().contains(pos)) return false;
+        if (world.getBlockState(res.getBlockPos()).getHardness(world, pos) < 0) return false;
+        return true;
     }
 
     /**
@@ -91,7 +96,7 @@ public class ExcavatorEnchantment extends ModEnchantment {
             toolTypes = Collections.singleton(miningToolItem.effectiveBlocks);
         }
 
-        if(!true) { //forge method was here
+        if(!(result instanceof BlockHitResult res && isValid(res, player.world))) { //forge method was here
             return 0;
         }
 
