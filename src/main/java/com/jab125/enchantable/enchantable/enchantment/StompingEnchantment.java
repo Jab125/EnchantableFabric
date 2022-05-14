@@ -1,5 +1,6 @@
 package com.jab125.enchantable.enchantable.enchantment;
 
+import com.jab125.enchantable.enchantable.sound.ModSounds;
 import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -89,7 +90,7 @@ public class StompingEnchantment extends ModEnchantment {
                                 {
                                     BlockState state = livingEntity.world.getBlockState(livingEntity.getBlockPos().down());
                                     serverWorld.spawnParticles(new BlockStateParticleEffect(ParticleTypes.BLOCK, state), livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), 50, 0, 0, 0, 0.15F);
-                                    //serverWorld.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), ModSounds.ENTITY_PLAYER_STOMP, SoundCategory.PLAYERS, 1.0F, 1.0F); //TODO: import sound
+                                    serverWorld.playSound(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), ModSounds.STOMP, SoundCategory.PLAYERS, 1.0F, 1.0F);
                                 }
 
                                 /* Cause the entity to bop up into the air */

@@ -1,3 +1,9 @@
 accessWidener    v2    named
 
 accessible field net/minecraft/item/ShovelItem PATH_STATES Ljava/util/Map;
+accessible field net/minecraft/client/network/ClientPlayerInteractionManager currentBreakingPos Lnet/minecraft/util/math/BlockPos;
+accessible field net/minecraft/client/network/ClientPlayerInteractionManager currentBreakingProgress F
+accessible field net/minecraft/client/network/ClientPlayerInteractionManager breakingBlock Z
+accessible field net/minecraft/client/render/WorldRenderer blockBreakingProgressions Lit/unimi/dsi/fastutil/longs/Long2ObjectMap;
+accessible field net/minecraft/client/render/WorldRenderer blockBreakingInfos Lit/unimi/dsi/fastutil/ints/Int2ObjectMap;
+accessible field net/minecraft/item/MiningToolItem effectiveBlocks Lnet/minecraft/tag/TagKey;
